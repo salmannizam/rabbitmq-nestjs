@@ -1,0 +1,100 @@
+// import { Module } from '@nestjs/common';
+// import { ClientsModule, Transport } from '@nestjs/microservices';
+
+// @Module({
+//   imports: [
+//     ClientsModule.register([
+//       {
+//         name: 'RABBITMQ_SERVICE',
+//         transport: Transport.RMQ,
+//         options: {
+//           urls: ['amqp://localhost:5672'],
+//           queue: 'task_queue', // Bind this queue to the exchange
+//           queueOptions: {
+//             durable: true,
+//           },
+//           exchange: {
+//             name: 'direct_exchange', // The exchange we're binding to
+//             type: 'direct',
+//             options: {
+//               durable: true,
+//             },
+//           },
+//           binding: {
+//             routingKey: 'task_queue', // Bind the queue with this routing key
+//           },
+//         },
+//       },
+//     ]),
+//   ],
+// })
+// export class AppModule {}
+
+
+// *******************************************
+
+
+// import { Module } from '@nestjs/common';
+// import { ClientsModule, Transport } from '@nestjs/microservices';
+
+// @Module({
+//   imports: [
+//     ClientsModule.register([
+//       {
+//         name: 'RABBITMQ_SERVICE',
+//         transport: Transport.RMQ,
+//         options: {
+//           urls: ['amqp://localhost:5672'],
+//           queue: 'notification_queue', // Bind this queue to the fanout exchange
+//           queueOptions: {
+//             durable: true,
+//           },
+//           exchange: {
+//             name: 'fanout_exchange', // The exchange we're binding to
+//             type: 'fanout',
+//             options: {
+//               durable: true,
+//             },
+//           },
+//         },
+//       },
+//     ]),
+//   ],
+// })
+// export class AppModule {}
+
+
+// ***********************************?
+
+
+// import { Module } from '@nestjs/common';
+// import { ClientsModule, Transport } from '@nestjs/microservices';
+
+// @Module({
+//   imports: [
+//     ClientsModule.register([
+//       {
+//         name: 'RABBITMQ_SERVICE',
+//         transport: Transport.RMQ,
+//         options: {
+//           urls: ['amqp://localhost:5672'],
+//           queue: 'task_updates', // Bind this queue with a pattern
+//           queueOptions: {
+//             durable: true,
+//           },
+//           exchange: {
+//             name: 'topic_exchange', // The exchange we're binding to
+//             type: 'topic',
+//             options: {
+//               durable: true,
+//             },
+//           },
+//           binding: {
+//             routingKey: 'task.*', // Bind the queue with a pattern
+//           },
+//         },
+//       },
+//     ]),
+//   ],
+// })
+// export class AppModule {}
